@@ -4,9 +4,10 @@ import java.util.Scanner;
 public class Query01 {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        // 1) ---> driver yükle
+             // 1) ---> driver yükle
         Class.forName("com.mysql.cj.jdbc.Driver");
        /*
+            ---- DİĞER DRİVERLAR ----
         oracle.jdbc.driver.OracleDriver
 
         org.postgresql.Driver
@@ -16,22 +17,23 @@ public class Query01 {
         org.sqlite.JDBC
         */
 
-        // 2) ---> Bağlantı oluştur
-          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/okul?serverTimezone=UTC", "root", "123456");
-            // okul -> localdeki baglantı kuracagımız database'in adı
+              // 2) ---> Bağlantı oluştur --- DriverManager veritabanı sürücülerinin bir listesini yönetir..
+        //                                  Gelen isteklere göre uygun veritabanı sürücüsünü esleştirir.
+        //                              Connection arayüzü bir veritabanı ile iletişim kurmak için tüm yöntemleri içerir
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/okul?serverTimezone=UTC", "root", "123456");
+        // okul -> localdeki baglantı kuracagımız database'in adı
 
-        // 3) ---> Statement    // Hibernate de session gibi düşünülebilir...
+               // 3) ---> Statement    // Bu arayüz ile SQL ifadelerini veritabanına gönderilir. Hibernate de session gibi düşünülebilir...
         Statement st = con.createStatement();
 
-        //  4) ---> ResultSet  = JDBC kullanarak veri çekme işlemi sonrasında veri listelemek için
-        //  ResultSet sınıfı kullanılır. Dönen değerler benzersiz olacağı için
+               // 4) ---> ResultSet  = veri çekme işlemi sonrasında gelen verileri tutar. Dönen değerler benzersiz olacağı için
         //   ResultSet arayüzü kullanılmış, Sınıf veriler üzerinde dolaşmak için next,
         //   first, last, previous, absolute gibi metotlara sahiptir.
         //
         //Veritabanı sütunlarında yer alan verileri almak için getVeriTipi metotları kullanılır.
         ResultSet veri = st.executeQuery("select * from ogrenciler");
 
-        //  5) ---> sonuçları yazdır
+               // 5) ---> sonuçları yazdır
         while (veri.next()) {   // iterator mantığı ile çalıştığı için next() kullanılıyor
             System.out.println(veri.getInt(1) + // veri.getInt("okul_no")  --> ile de olur
                     veri.getString(2) + // veri.getString("ogrenci_ismi")  --> ile de olur
@@ -61,7 +63,7 @@ public class Query01 {
 
 
 
-        //  6) Kapatma
+        //  6) ---> Kapatma
         con.close();
         st.close();
         veri.close();
