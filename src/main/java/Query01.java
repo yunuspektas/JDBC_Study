@@ -5,7 +5,10 @@ public class Query01 {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
              // 1) ---> driver yükle
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        //  Veritabanı sürücüsü için gerekli olan dosyalar yüklendikten sonra veritabanı bağlantı sınıfı
+        //  projeye dahil edilir.
+        Class.forName("com.mysql.cj.jdbc.Driver"); // java 6 ile buna gerek kalmadı. bu komut opsiyoneldir.
+        // pom.xml e gerekli dependency eklenince bu komudu yazmaya gerek kalmıyor.
        /*
             ---- DİĞER DRİVERLAR ----
         oracle.jdbc.driver.OracleDriver

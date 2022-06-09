@@ -39,6 +39,11 @@ public class Query05 {
         }
         st.executeBatch();
 
+        // executeBatch() faydaları : her bir insert işlemi için ayrı statement açıldıgını düşünürsek bu hem veri kaybı
+        // hem de kaynakları gereksiz kullanilmasına sebeb olur, bunu önlemek için benzer bir şekilde hibernate de
+        // commit fonksiyonu  kullanılıyor ( bekleyen tüm değişiklikleri kalıcı hale getirmek için )
+        //
+
 
 
 
