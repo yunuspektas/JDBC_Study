@@ -10,8 +10,8 @@ public class Query05 {
 
             // SORU01 : Bölümler tablosunda yeni bir kayıt (80, 'ARGE', 'ISTANBUL')
 
-        // yapılan işlemler sonrası geribildirim almak istiyorsak bu method kullanıulır; kaydetti mi , sildi mi  gibi..
-        // ınsert / update / delete  GİBİ METHODLAR İÇİN KULLANILIR. Dönüş değeri int oldugu için
+        // yapılan işlemler sonrası geribildirim almak istiyorsak bu method kullanılır; kaydetti mi , sildi mi  gibi..
+        // ! ınsert / update / delete  GİBİ METHODLAR İÇİN KULLANILIR. Dönüş değeri int oldugu için
         // 1 ise başarılı, 0 ise başarısız olmuştur
         st.executeUpdate("insert into bolumler values (80,'ARGE', 'ISTANBUL'");
 
@@ -39,7 +39,7 @@ public class Query05 {
         }
         st.executeBatch();
 
-        // executeBatch() faydaları : her bir insert işlemi için ayrı statement açıldıgını düşünürsek bu hem veri kaybı
+        // !!!! executeBatch() faydaları : her bir insert işlemi için ayrı statement açıldıgını düşünürsek bu hem veri kaybı
         // hem de kaynakları gereksiz kullanilmasına sebeb olur, bunu önlemek için benzer bir şekilde hibernate de
         // commit fonksiyonu  kullanılıyor ( bekleyen tüm değişiklikleri kalıcı hale getirmek için )
         //
