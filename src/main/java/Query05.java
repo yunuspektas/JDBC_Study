@@ -45,6 +45,18 @@ public class Query05 {
         //
 
 
+        // !  --->  GENEL DEĞERLENDİRME <---
+
+        // JDBC nin eksiklikleri  :
+
+//  1--->   SQL bağımlılığı,( SQL ile yazılıyor JDBC komutları
+//  2 -->   Java kodları içerisine, SQL yazımının ,  syntax hatası vermeye müsait oluşu
+//  3 -->   Veri tabanı bağımlılığı : JDBC siyi Oracle ile kullanıldığında ve Oracle a has "if" ve "for" gibi yapıların
+        //  SQL k0mutlarında kullanıldıgını düşünürsek ve projenin belli bir süre sonra MySQL e geçirmeye çalıştıgımızda
+        //  MySQL de desteği olmayan if ve for gibi komutlardan dolayı SQL sorgularını yeniden yazmak gerekebilir
+//  4 -->   Hibernate deki ilişkilendirme (@OneToMany gibi) işlemlerinin JDBC de SQL komutlarıyla yapılması
+//  5 -->   Belkide en önemli eksikliği : Hibernetteki OOP mantığı ile Veritabanı üzerindeki verilerle manipülasyon
+        //yapılamıyışı.
 
 
 

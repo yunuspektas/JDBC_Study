@@ -10,15 +10,15 @@ public class Query01 {
         Class.forName("com.mysql.cj.jdbc.Driver"); // !! java 6 ile buna gerek kalmadı. bu komut opsiyoneldir.
         // !! pom.xml e gerekli dependency eklenince bu komudu yazmaya gerek kalmıyor.
 
-        /*
+         /*
             ---- DİĞER DRİVERLAR ----
-        oracle.jdbc.driver.OracleDriver
+        ORACLE      ----->  oracle.jdbc.driver.OracleDriver
 
-        org.postgresql.Driver
+        POSTGRESQL  ----->  org.postgresql.Driver
 
-        com.microsoft.sqlserver.jdbc.SQLServerDrive
+        MS-SQL      ----->  com.microsoft.sqlserver.jdbc.SQLServerDrive
 
-        org.sqlite.JDBC
+        SQL-LITE    ----->  org.sqlite.JDBC
         */
 
               // 2) ---> Bağlantı oluştur ---
